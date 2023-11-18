@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DriveMetaDataSampleApp</string>
+    <string name="impossible_game">Impossible Game</string>
+    <string name="retry_button_text">Retry</string>
+    <string name="watch_video_button_text">Watch Video for 10 additional coins</string>
+    <string name="default_coin_text">Coins: 0</string>
+    <string name="msg_token_fmt" translatable="false">e443%s</string>
+
+</resources>

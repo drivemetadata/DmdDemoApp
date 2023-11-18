@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "project_number": "337053718471",
+    "firebase_url": "https://nogames-905be.firebaseio.com",
+    "project_id": "nogames-905be",
+    "storage_bucket": "nogames-905be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337053718471:android:c100782b6816e66dc72be2",
+        "android_client_info": {
+          "package_name": "com.drivemetadataintegrations"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "337053718471-oonmhls614epg32qrrh4rslpiavo3vi2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCctqnyfe13a4VcxXfUIOVDLHm1UkDGuOY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "337053718471-oonmhls614epg32qrrh4rslpiavo3vi2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "337053718471-u0fu3jujbu4et15sks425ehv11jh5sb8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ondemand.NOGAME",
+                "app_store_id": "1052054793"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337053718471:android:2aabb08372bad7dd",
+        "android_client_info": {
+          "package_name": "com.medical"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "337053718471-hjin5jmta6jgrod56ofvbfamamqdmd2m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.medical",
+            "certificate_hash": "7429b209907ddd157ee5d661c5a6e491098579f8"
+          }
+        },
+        {
+          "client_id": "337053718471-oonmhls614epg32qrrh4rslpiavo3vi2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCctqnyfe13a4VcxXfUIOVDLHm1UkDGuOY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "337053718471-oonmhls614epg32qrrh4rslpiavo3vi2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "337053718471-u0fu3jujbu4et15sks425ehv11jh5sb8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ondemand.NOGAME",
+                "app_store_id": "1052054793"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
