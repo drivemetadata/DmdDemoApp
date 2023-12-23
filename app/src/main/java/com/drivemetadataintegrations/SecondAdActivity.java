@@ -12,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.drivemetadata.DriveMetaData;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdValue;
@@ -107,7 +106,7 @@ public class SecondAdActivity extends AppCompatActivity {
                                     public void onAdShowedFullScreenContent() {
                                         // Called when fullscreen content is shown.
 
-                                        DriveMetaData.sendInterstitialAdsDetails(SecondAdActivity.this,SecondAdActivity.this.interstitialAd);
+                                       // DriveMetaData.sendInterstitialAdsDetails(SecondAdActivity.this,SecondAdActivity.this.interstitialAd);
 
                                         Log.d("TAG", "The ad was shown.");
                                     }

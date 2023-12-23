@@ -2,6 +2,7 @@ package com.drivemetadataintegrations;
 
 import android.app.Application;
 import android.content.Context;
+
 import com.drivemetadata.DriveMetaData;
 
 public class MetaDataSampleApplication extends Application{

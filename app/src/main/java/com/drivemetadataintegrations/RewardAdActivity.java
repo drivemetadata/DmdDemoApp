@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.drivemetadata.DriveMetaData;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdValue;
@@ -138,7 +137,7 @@ public class RewardAdActivity extends Activity {
                         public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
                             RewardAdActivity.this.rewardedAd = rewardedAd;
                             Log.d(TAG, "onAdLoaded");
-                            DriveMetaData.sendRewardedAdAdsDetails(RewardAdActivity.this,RewardAdActivity.this.rewardedAd);
+                           // DriveMetaData.sendRewardedAdAdsDetails(RewardAdActivity.this,RewardAdActivity.this.rewardedAd);
 
                             RewardAdActivity.this.isLoading = false;
                             Toast.makeText(RewardAdActivity.this, "onAdLoaded", Toast.LENGTH_SHORT).show();
@@ -207,7 +206,7 @@ public class RewardAdActivity extends Activity {
                     public void onAdShowedFullScreenContent() {
                         // Called when ad is shown.
 
-                        DriveMetaData.sendRewardedAdAdsDetails(RewardAdActivity.this,RewardAdActivity.this.rewardedAd);
+                     //   DriveMetaData.sendRewardedAdAdsDetails(RewardAdActivity.this,RewardAdActivity.this.rewardedAd);
 
                         Log.d(TAG, "onAdShowedFullScreenContent");
                         Toast.makeText(RewardAdActivity.this, "onAdShowedFullScreenContent", Toast.LENGTH_SHORT)

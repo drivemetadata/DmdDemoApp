@@ -82,31 +82,11 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
                 Log.e("AdMod", "" + initializationStatus);
             }
         });
-//        List<String> testDeviceIds = Arrays.asList("7C1175DBFB5D5BE7DFE6E8145160EE93");
-//        RequestConfiguration configuration =
-//                new RequestConfiguration.Builder().setTestDeviceIds(testDeviceIds).build();
-//        MobileAds.setRequestConfiguration(configuration);
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
-//        mAdView.setOnPaidEventListener(new OnPaidEventListener() {
-//                                           @Override
-//                                           public void onPaidEvent(@NonNull AdValue adValue) {
-//                                               System.out.println("getCurrencyCode"+adValue.getCurrencyCode());
-//                                               System.out.println("getValueMicros"+adValue.getValueMicros());
-//                                               System.out.println("getPrecisionType"+adValue.getPrecisionType());
-//
-//
-//                                           }
-//                                       });
-
-        DriveMetaData.sendBannerDetails(this,mAdView,adRequest);
-
-
-                mAdView.loadAd(adRequest);
+       // DriveMetaData.sendBannerDetails(this,mAdView,adRequest);
+        mAdView.loadAd(adRequest);
         // add paid event listener
-
-
-
         FirebaseMessaging.getInstance().getToken()
                 .addOnCompleteListener(new OnCompleteListener<String>() {
                     @Override
@@ -122,7 +102,7 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
                         // Log and toast
                         String deviceToken = getString(R.string.msg_token_fmt, token);
                         Log.d("DeviceToken", deviceToken);
-
+/* for example code **/
                         JSONObject userDetails = new JSONObject();
                         JSONObject userObject =  new JSONObject();
                         try {
