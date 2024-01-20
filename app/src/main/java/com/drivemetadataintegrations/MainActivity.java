@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -75,6 +76,7 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
 
         btn_checkout.setOnClickListener(this);
 
+
         DriveMetaData.with(this).setDriveMetaDataCallbacks(this::onResponse);
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -118,8 +120,19 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
 
                     }
                 });
-
-
+        // for deeplink
+        Uri uri = this.getIntent().getData();
+        if(uri!=null )
+        {
+            String data = uri.getQueryParameter("deep_link_value");
+            if(data!=null) {
+                Intent intent = new Intent(MainActivity.this, DeepLinkActivity.class);
+                intent.putExtra("DeepLinkData", "" + data);
+                startActivity(intent);
+            } else {
+                System.out.println("Invalid input format");
+            }
+        }
 
 
 
