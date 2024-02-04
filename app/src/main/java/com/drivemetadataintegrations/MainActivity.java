@@ -120,20 +120,11 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
 
                     }
                 });
-        // for deeplink
-        Uri uri = this.getIntent().getData();
-        if(uri!=null )
-        {
-            String data = uri.getQueryParameter("deep_link_value");
-            if(data!=null) {
-                Intent intent = new Intent(MainActivity.this, DeepLinkActivity.class);
-                intent.putExtra("DeepLinkData", "" + data);
-                startActivity(intent);
-            } else {
-                System.out.println("Invalid input format");
-            }
-        }
 
+        /* Handle the deeplink via drivemetadata */
+        Uri uri = this.getIntent().getData();
+        String data = DriveMetaData.handleDeepLink(this,uri); // deeplink method
+        Log.e("Data",data.toString());
 
 
 
