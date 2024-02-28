@@ -125,8 +125,21 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
         Uri uri = this.getIntent().getData();
         String data = DriveMetaData.handleDeepLink(this,uri); // deeplink method
         Log.e("Data",data.toString());
+        //
+// fetching the deeplink data
+        DriveMetaData.getBackgroundData(MainActivity.this,new DriveMetaData.DeepLinkCallBack() {
+            @Override
+            public void onResponse(String response) {
+                // Handle the API response
+                Log.d("API Response", response); //getting response
+            }
 
-
+            @Override
+            public void onError(Exception e) {
+                // Handle errors
+                e.printStackTrace();
+            }
+        });
 
     }
 
