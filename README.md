@@ -18,7 +18,7 @@ We publish the SDK to `mavenCentral` as an `AAR` file. Just declare it as depend
 
 ```groovy
     dependencies {
-    implementation 'com.drivemetadata:dmd-android-sdk:1.2.1'
+    implementation 'com.drivemetadata:dmd-android-sdk:1.2.2'
     implementation "com.android.installreferrer:installreferrer:2.2"
     }
 ```
@@ -31,7 +31,7 @@ Add the Install Referrer library and Android Support Library v4 as dependencies 
 
 ```groovy
     dependencies {
-    implementation 'com.drivemetadata:dmd-android-sdk:1.2.1'
+    implementation 'com.drivemetadata:dmd-android-sdk:1.2.2'
     implementation "com.android.installreferrer:installreferrer:2.2"
 }
 ```
@@ -63,4 +63,4 @@ For reference, we have uploaded a demo project with the latest SDK in the <code>
 
 #### Supports:
 
-* Tested and validated from Android 5.0 (API level 21) to Android 12 (API level 33).
+* Tested and validated from Android 5.0 (API level 21) to Android 13 (API level 33).
