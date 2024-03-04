@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.drivemetadata.DriveMetaData;
+import com.drivemetadata.callbacks.DeepLinkCallBack;
 import com.drivemetadata.callbacks.DriveMetaDataCallbacks;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdListener;
@@ -127,7 +128,7 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
         Log.e("Data",data.toString());
         //
 // fetching the deeplink data
-        DriveMetaData.getBackgroundData(MainActivity.this,new DriveMetaData.DeepLinkCallBack() {
+        DriveMetaData.getBackgroundData(MainActivity.this,new DeepLinkCallBack() {
             @Override
             public void onResponse(String response) {
                 // Handle the API response
