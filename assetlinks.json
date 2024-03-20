@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.drivemetadataintegrations",
+    "sha256_cert_fingerprints":
+    ["DA:17:84:BF:CF:32:59:E2:9D:53:48:F2:5A:4F:A5:B1:F5:A7:E7:74:EA:DA:C0:2B:99:55:1C:87:E0:B7:D9:A8"]
+  }
+}]

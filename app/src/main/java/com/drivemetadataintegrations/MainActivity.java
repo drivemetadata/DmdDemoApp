@@ -133,11 +133,16 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
             public void onResponse(String response) {
                 // Handle the API response
                 Log.d("API Response", response); //getting response
+                Intent intent = new Intent(MainActivity.this,DeepLinkActivity.class);
+                intent.putExtra("DeepLinkData",response);
+                startActivity(intent);
             }
 
             @Override
             public void onError(Exception e) {
                 // Handle errors
+                Log.d("API Response exception", e.toString()); //getting response
+
                 e.printStackTrace();
             }
         });
