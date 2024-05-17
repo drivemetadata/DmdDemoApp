@@ -46,6 +46,7 @@ import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.installations.Utils;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import org.json.JSONException;
@@ -79,6 +80,16 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
 
 
         DriveMetaData.with(this).setDriveMetaDataCallbacks(this::onResponse);
+        DriveMetaData.enableDebugLog(this,true);
+
+
+
+        Log.e("getAnonymousId",DriveMetaData.getAnonymousId(this));// DriveMetaData.getAnonymousId(this);
+        Log.e("getDeviceId",DriveMetaData.getDeviceId(this));
+        Log.e("getAdvertisementId",DriveMetaData.getAdvertisementId(this));
+        Log.e("getDeviceName",DriveMetaData.getDeviceName());
+        Log.e("getAppVersion",DriveMetaData.getAppVersion());
+
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
@@ -123,29 +134,29 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
                 });
 
         /* Handle the deeplink via drivemetadata */
-        Uri uri = this.getIntent().getData();
-        String data = DriveMetaData.handleDeepLink(this,uri); // deeplink method
-        Log.e("Data",data.toString());
+       // String data = DriveMetaData.handleDeepLink(this,uri); // deeplink method
+       // Log.e("Data",uri.toString());
         //
-// fetching the deeplink data
-        DriveMetaData.getBackgroundData(MainActivity.this,new DeepLinkCallBack() {
+
+// fetching the background  data from sdk
+
+        Uri uri = this.getIntent().getData();
+
+        DriveMetaData.getBackgroundData(MainActivity.this,uri,new DeepLinkCallBack() {
             @Override
             public void onResponse(String response) {
-                // Handle the API response
                 Log.d("API Response", response); //getting response
-                Intent intent = new Intent(MainActivity.this,DeepLinkActivity.class);
-                intent.putExtra("DeepLinkData",response);
-                startActivity(intent);
+
             }
 
             @Override
             public void onError(Exception e) {
                 // Handle errors
                 Log.d("API Response exception", e.toString()); //getting response
-
-                e.printStackTrace();
             }
         });
+
+
 
     }
 

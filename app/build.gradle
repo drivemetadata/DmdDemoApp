@@ -12,8 +12,8 @@ android {
         applicationId "com.drivemetadataintegrations"
         minSdk 21
         targetSdk 33
-        versionCode 53
-        versionName "3.0.3"
+        versionCode 54
+        versionName "3.0.4"
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -34,22 +34,24 @@ android {
 dependencies {
     implementation "androidx.multidex:multidex:2.0.1"
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
+    //noinspection GradleDependency
+    implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    //noinspection GradleDependency
+    implementation 'androidx.activity:activity:1.8.2'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation fileTree(include: ['*.aar'], dir: 'libs')
-    implementation platform('com.google.firebase:firebase-bom:31.5.0')
-   // implementation 'com.drivemetadata:dmd-android-sdk:1.2.4' //DRIVEMETADATA-release.aar
-    implementation files('lib/DRIVEMETADATA-release.aar')
+    implementation platform('com.google.firebase:firebase-bom:32.8.0')
+    implementation 'com.drivemetadata:dmd-android-sdk:1.2.8' //DRIVEMETADATA-release.aar
+    //implementation files('lib/DRIVEMETADATA-release.aar')
 
     implementation 'com.google.firebase:firebase-messaging'
-    implementation "org.jetbrains.kotlin:kotlin-reflect:1.7.10"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.8.22"
 
     implementation 'com.android.installreferrer:installreferrer:2.2'
-    implementation 'com.google.android.gms:play-services-ads:22.0.0'
-    implementation ('com.kochava.tracker:tracker:5.3.0')
+    implementation 'com.google.android.gms:play-services-ads:23.0.0'
 
 
 }

@@ -14,6 +14,8 @@ public class MetaDataSampleApplication extends Application{
                 "4d17d90c78154c9a5569c073b67d8a5a22b2fabfc5c9415b6e7f709d68762054",3020).build();
         // Set the initialized instance as a globally accessible instance.
         DriveMetaData.setSingletonInstance(driveMetadata);
+        DriveMetaData.enableDebugLog(this,true);
+
     }
 
 

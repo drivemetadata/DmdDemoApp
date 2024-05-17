@@ -7,13 +7,14 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+
     <queries>
         <package android:name="com.facebook.katana" />
         <package android:name="com.instagram.android" />
     </queries>
 
     <application
-        android:name="com.drivemetadataintegrations.MetaDataSampleApplication"
+        android:name=".MetaDataSampleApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_meta_data_logo"
         android:label="@string/app_name"
@@ -21,28 +22,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MetaDataSampleApp"
         tools:replace="android:theme">
+        <activity
+            android:name=".ScrollActivity"
+            android:exported="false" />
         <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-6194046487385098~6952905019" />
 
         <activity
-            android:name="com.drivemetadataintegrations.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <intent-filter android:autoVerify="true"
+            <intent-filter
+                android:autoVerify="true"
                 tools:ignore="UnusedAttribute">
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data
-                    android:scheme="https"
                     android:host="deep.drivemetadata.com"
-                    />
+                    android:scheme="https" />
             </intent-filter>
         </activity>
         <activity
@@ -53,9 +59,11 @@
         <activity
             android:name=".RewardAdActivity"
             android:exported="true">
+
         </activity>
-        <activity android:name=".DeepLinkActivity"
-            android:exported="true"/>
+        <activity
+            android:name=".DeepLinkActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
