@@ -5,5 +5,11 @@
     <string name="watch_video_button_text">Watch Video for 10 additional coins</string>
     <string name="default_coin_text">Coins: 0</string>
     <string name="msg_token_fmt" translatable="false">e443%s</string>
+    <string name="tag_name_sdk">This app is testing for DriveMetaData SDK</string>
+    <string name="button_interstitial">InterstitialAd</string>
+    <string name="rewarded_Ads">Reward Ad</string>
+    <string name="meta_install_referrer">Meta Install Referrer :</string>
+    <string name="play_store_install_referrer">Play Store Install Referrer :</string>
+
 
 </resources>

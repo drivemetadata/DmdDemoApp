@@ -60,11 +60,13 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
     Button btnView,btn_add_to_cart,btn_checkout;
     private InterstitialAd mInterstitialAd;
     private AdView mAdView;
+    private TextView metaReferer,googleReferer;
 
 
 
 
-    @SuppressLint("MissingInflatedId")
+
+    @SuppressLint({"MissingInflatedId", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +77,8 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
         btn_add_to_cart.setOnClickListener(this);
 
         btn_checkout = findViewById(R.id.btn_checkout);
+        metaReferer = findViewById(R.id.metaReferrer);
+        googleReferer= findViewById(R.id.googleReferrer);
 
         btn_checkout.setOnClickListener(this);
 
@@ -87,8 +91,8 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
         Log.e("getAnonymousId",DriveMetaData.getAnonymousId(this));// DriveMetaData.getAnonymousId(this);
         Log.e("getDeviceId",DriveMetaData.getDeviceId(this));
         Log.e("getAdvertisementId",DriveMetaData.getAdvertisementId(this));
-        Log.e("getDeviceName",DriveMetaData.getDeviceName());
-        Log.e("getAppVersion",DriveMetaData.getAppVersion());
+       // Log.e("getDeviceName",DriveMetaData.());
+        Log.e("getDeviceDetails",DriveMetaData.getDeviceDetails(this));
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -101,6 +105,7 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
        // DriveMetaData.sendBannerDetails(this,mAdView,adRequest);
         mAdView.loadAd(adRequest);
         // add paid event listener
+
         FirebaseMessaging.getInstance().getToken()
                 .addOnCompleteListener(new OnCompleteListener<String>() {
                     @Override
@@ -112,19 +117,17 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
 
                         // Get new FCM registration token
                         String token = task.getResult();
-
                         // Log and toast
                         String deviceToken = getString(R.string.msg_token_fmt, token);
                         Log.d("DeviceToken", deviceToken);
-/* for example code **/
                         JSONObject userDetails = new JSONObject();
                         JSONObject userObject =  new JSONObject();
                         try {
                             userDetails.put("device_token", deviceToken);
                             userObject.put("deviceNotificationToken",userDetails );
                             DriveMetaData.with(MainActivity.this).sendTags(userObject.toString(),"deviceToken");
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+                        } catch (Exception e) {
+                            Log.e("Exception",e.toString());
                         }
 
 
@@ -142,6 +145,7 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
 
         Uri uri = this.getIntent().getData();
 
+
         DriveMetaData.getBackgroundData(MainActivity.this,uri,new DeepLinkCallBack() {
             @Override
             public void onResponse(String response) {
@@ -155,10 +159,16 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
                 Log.d("API Response exception", e.toString()); //getting response
             }
         });
+        String googleRefererData = DriveMetaData.getGoogleInstallReferrer(this);
 
 
+        String metaRefererData = DriveMetaData.getMetaInstallReferrer(this);
+
+      googleReferer.setText(" : "+ googleRefererData);
+      metaReferer.setText(" : "+ metaRefererData);
 
     }
+
 
 
 
@@ -174,10 +184,7 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
     public void onClick(View view) {
         int id = view.getId();
         switch (id) {
-            case R.id.btn_view:
 
-
-                break;
             case R.id.btn_add_to_cart:
                 Log.e("Click","click");
                 Intent intent = new Intent(MainActivity.this,SecondAdActivity.class);
@@ -218,7 +225,7 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onResponse(boolean status, String message, String requestAcknowledgementID) {
-        Log.d("MainActibity", "status "+status+ " message "+message);
+        Log.d("MainActivity", "status "+status+ " message "+message);
     }
 
 

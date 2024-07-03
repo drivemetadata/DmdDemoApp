@@ -10,7 +10,14 @@
 
     <queries>
         <package android:name="com.facebook.katana" />
+    </queries>
+
+    <queries>
         <package android:name="com.instagram.android" />
+    </queries>
+
+    <queries>
+        <package android:name="com.facebook.lite" />
     </queries>
 
     <application
