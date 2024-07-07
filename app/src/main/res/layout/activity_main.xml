@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent">
+
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:gravity="center"
-    android:layout_margin="10dp"
     android:background="@color/white">
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:src="@drawable/ic_meta_data_logo"
         android:contentDescription="@string/app_name" />
     <com.google.android.gms.ads.AdView
@@ -56,14 +60,15 @@
         android:text="@string/meta_install_referrer"
 
         />
-    <TextView
+    <EditText
         android:id="@+id/metaReferrer"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        android:autofillHints="Show Meta Referrer"
+        android:lines="4"
         android:textColor="@color/black"
         android:textSize="16sp"
-
         />
     <TextView
         android:layout_width="wrap_content"
@@ -75,13 +80,40 @@
         android:text="@string/play_store_install_referrer"
 
         />
-    <TextView
+    <EditText
         android:id="@+id/googleReferrer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_margin="10dp"
+        android:lines="4"
+        android:autofillHints="Show Google Referrer"
+
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        />
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="visible"
         android:layout_marginTop="10dp"
         android:textColor="@color/black"
         android:textSize="16sp"
+        android:text="@string/instagram_store_install_referrer"
+
+        />
+
+    <EditText
+        android:id="@+id/instarReferrer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:autofillHints="Show Insta Referrer"
+        android:lines="4"
+
+        android:textColor="@color/black"
+        android:textSize="16sp"
+
         />
 </LinearLayout>
+</ScrollView>

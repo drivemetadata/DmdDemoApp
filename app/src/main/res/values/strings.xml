@@ -10,6 +10,8 @@
     <string name="rewarded_Ads">Reward Ad</string>
     <string name="meta_install_referrer">Meta Install Referrer :</string>
     <string name="play_store_install_referrer">Play Store Install Referrer :</string>
+    <string name="instagram_store_install_referrer">Instagram Install Referrer :</string>
+
 
 
 </resources>

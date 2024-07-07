@@ -14,6 +14,7 @@ import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -60,7 +61,7 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
     Button btnView,btn_add_to_cart,btn_checkout;
     private InterstitialAd mInterstitialAd;
     private AdView mAdView;
-    private TextView metaReferer,googleReferer;
+    private EditText metaReferer,googleReferer,instaReferer;
 
 
 
@@ -79,6 +80,7 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
         btn_checkout = findViewById(R.id.btn_checkout);
         metaReferer = findViewById(R.id.metaReferrer);
         googleReferer= findViewById(R.id.googleReferrer);
+        instaReferer = findViewById(R.id.instarReferrer);
 
         btn_checkout.setOnClickListener(this);
 
@@ -163,9 +165,11 @@ public class MainActivity  extends  AppCompatActivity implements View.OnClickLis
 
 
         String metaRefererData = DriveMetaData.getMetaInstallReferrer(this);
+        String instaRefererData  = DriveMetaData.getInstagramInstallReferrer(this);
 
       googleReferer.setText(" : "+ googleRefererData);
       metaReferer.setText(" : "+ metaRefererData);
+      instaReferer.setText(" : " + instaRefererData);
 
     }
 
