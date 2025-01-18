@@ -6,11 +6,14 @@
     <string name="default_coin_text">Coins: 0</string>
     <string name="msg_token_fmt" translatable="false">e443%s</string>
     <string name="tag_name_sdk">This app is testing for DriveMetaData SDK</string>
-    <string name="button_interstitial">InterstitialAd</string>
-    <string name="rewarded_Ads">Reward Ad</string>
+    <string name="button_interstitial">Add to Cart</string>
+    <string name="upDateCart">Update to Cart</string>
+    <string name="rewarded_Ads">Delete To Cart</string>
     <string name="meta_install_referrer">Meta Install Referrer :</string>
     <string name="play_store_install_referrer">Play Store Install Referrer :</string>
     <string name="instagram_store_install_referrer">Instagram Install Referrer :</string>
+    <string name="details">Details :</string>
+
 
 
 

@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
     <queries>
         <package android:name="com.facebook.katana" />
@@ -58,11 +59,7 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".SecondAdActivity"
-            android:exported="true">
 
-        </activity>
         <activity
             android:name=".RewardAdActivity"
             android:exported="true">
@@ -71,6 +68,13 @@
         <activity
             android:name=".DeepLinkActivity"
             android:exported="true" />
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
